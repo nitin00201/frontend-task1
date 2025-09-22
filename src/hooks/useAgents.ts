@@ -1,5 +1,5 @@
 'use client';
-
+//  @typescript-eslint/no-explicit-any
 import { useState, useCallback } from 'react';
 import { Agent, CreateAgentRequest, UpdateAgentRequest, AgentQueryParams } from '@/types';
 import { agentApi } from '@/services/api';

@@ -1,4 +1,4 @@
-// API Response Types
+// @typescript-eslint/no-explicit-any
 export interface ApiResponse<T = any> {
   success: boolean;
   message: string;

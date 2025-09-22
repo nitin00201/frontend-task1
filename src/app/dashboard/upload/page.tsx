@@ -14,13 +14,11 @@ import {
   AlertCircle, 
   Users, 
   BarChart3,
-  Download,
   X,
   Loader2
 } from 'lucide-react';
 import { useFileUpload } from '@/hooks/useDistributions';
 import { useAgents } from '@/hooks/useAgents';
-import { UploadResponse } from '@/types';
 
 export default function UploadPage() {
   const { uploading, error, result, uploadFile, resetUpload } = useFileUpload();
@@ -102,8 +100,7 @@ export default function UploadPage() {
     try {
       await uploadFile(file);
     } catch (error) {
-      // Error is handled by the hook
-    }
+console.log(error)    }
   };
 
   const handleReset = () => {
@@ -332,7 +329,7 @@ export default function UploadPage() {
                 Distribution Summary
               </h3>
               <div className="space-y-3">
-                {result.distributions.map((dist, index) => (
+                {result.distributions.map((dist) => (
                   <div key={dist.distributionId} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex-1">
                       <p className="font-medium">{dist.agentName}</p>
@@ -423,7 +420,7 @@ export default function UploadPage() {
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                 <li>Maximum file size: 5MB</li>
                 <li>Data is distributed equally among active agents</li>
-                <li>If records don't divide evenly, remainder is distributed sequentially</li>
+                <li>If records don&apos;t divide evenly, remainder is distributed sequentially</li>
               </ul>
             </div>
           </div>

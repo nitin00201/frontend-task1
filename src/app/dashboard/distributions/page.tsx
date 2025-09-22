@@ -6,9 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, } from '@/components/ui/dialog';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Label } from '@/components/ui/label';
 import { 
   BarChart3, 
   Search, 
@@ -19,7 +18,6 @@ import {
   Users, 
   Calendar,
   Loader2,
-  AlertCircle
 } from 'lucide-react';
 import { useDistributions } from '@/hooks/useDistributions';
 import { Distribution, DistributionQueryParams } from '@/types';
@@ -51,6 +49,7 @@ export default function DistributionsPage() {
       setShowDetailsDialog(true);
     } catch (error) {
       alert('Failed to load distribution details');
+      console.log(error)
     } finally {
       setDetailsLoading(false);
     }
